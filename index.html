@@ -20,7 +20,7 @@
                 <div class=" border img_nav_container">
                     <img class="img_avatar" src="imgs/avatar_io.jpg" alt="">
                 </div>
-                <div class=" border empty_div">
+                <div class=" border grow_div">
 
                 </div>
                 <div class=" border icon_style">
@@ -51,7 +51,13 @@
             </div>
             <div class="contacts_list_footer " >
                 <div class="obj_hover" v-for="(obj,index) in usersList " > 
-                    <img class="img_avatar_contact" :src="obj.avatar" alt="avatar">
+                    <div>
+                        <img class="img_avatar_contact" :src="obj.avatar" alt="avatar">
+                    </div>
+                    <div>
+                        <h5>{{obj.name}}</h5>
+                        <p>Non ci sonno messaggi!</p>
+                    </div>
                 </div>
             </div>
 
@@ -61,25 +67,42 @@
 
 
         <section class="section_right">
+            
             <div class=" border pl_10 nav_part">
                 <div class=" border img_nav_container">
                     <img class="img_avatar" src="imgs/avatar_2.jpg" alt="">
                 </div>
-                <div class=" border empty_div">
-
+                <div class=" border grow_div">
+                        
                 </div>
                 <div class=" border icon_style">
                     <i class="color_grey_icons pl_5 pr_5  fa fa-search " aria-hidden="true"></i>
                 </div>
                 <div class=" border icon_style">
-                     <i class="color_grey_icons pl_5 pr_5 fas fa-paperclip"></i>
+                    <i class="color_grey_icons pl_5 pr_5 fas fa-paperclip"></i>
                     
                 </div>
                 <div class=" border icon_style">
                     <i class="color_grey_icons pl_5 pr_5 fas fa-ellipsis-v"></i>
                 </div>
             </div>
-           
+            
+          
+            <div>
+                <div class="section_right_footer">
+                    <div class="">
+                        <i class="p_20 far fa-smile-wink"></i>
+                        
+                    </div>
+                    <div class="grow_div">
+                        <input class=" input_style" type="search" placeholder="">
+                    </div>
+                    <div class="">
+                        <i class="p_20 fa fa-microphone" aria-hidden="true"></i>
+                    </div>
+                    
+                </div>
+            </div>
         </section>
     </div>
   
