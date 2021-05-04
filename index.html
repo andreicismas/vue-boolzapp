@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Vue Boolzapp</title>
+</head>
+<body>
+    <div class="top_body_color"></div>
+    <div id="app" class="max_container">
+        <section class=" border section_left">
+            <div class=" border pl_10 nav_part">
+                <div class=" border img_nav_container">
+                    <img class="img_avatar" src="imgs/avatar_io.jpg" alt="">
+                </div>
+                <div class=" border empty_div">
+
+                </div>
+                <div class=" border icon_style">
+                    <i class="color_grey_icons pl_5 pr_5 fas fa-circle-notch"></i>
+                </div>
+                <div class=" border icon_style">
+                    <i class="color_grey_icons pl_5 pr_5 fa fa-comment" aria-hidden="true"></i>
+                </div>
+                <div class=" border icon_style">
+                    <i class="color_grey_icons pl_5 pr_5  fa fa-ellipsis-v" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="main_part"> 
+                <div  class="pl_10 notif_part">
+                    <div class=" bell_circle img_avatar">
+                        <i class=" fa fa-bell-slash" aria-hidden="true"></i>
+                    </div>
+                    <div class="pl_5">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                         <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <div class="search_part pl_10">
+                    <i class="fa fa-search search_style" aria-hidden="true"></i>
+                    <input class=" input_style" type="search" placeholder="       Cerca o inizia una nuova chat">
+                </div>
+                
+            </div>
+            <div class="contacts_list_footer " >
+                <div class="obj_hover" v-for="(obj,index) in usersList " > 
+                    <img class="img_avatar_contact" :src="obj.avatar" alt="avatar">
+                </div>
+            </div>
+
+
+          
+        </section>
+
+
+        <section class="section_right">
+            <div class=" border pl_10 nav_part">
+                <div class=" border img_nav_container">
+                    <img class="img_avatar" src="imgs/avatar_2.jpg" alt="">
+                </div>
+                <div class=" border empty_div">
+
+                </div>
+                <div class=" border icon_style">
+                    <i class="color_grey_icons pl_5 pr_5  fa fa-search " aria-hidden="true"></i>
+                </div>
+                <div class=" border icon_style">
+                     <i class="color_grey_icons pl_5 pr_5 fas fa-paperclip"></i>
+                    
+                </div>
+                <div class=" border icon_style">
+                    <i class="color_grey_icons pl_5 pr_5 fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+           
+        </section>
+    </div>
+  
+    <script src="script.js"></script>
+</body>
+</html>

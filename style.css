@@ -1,0 +1,165 @@
+
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* colore body */
+body{
+    background-color: #DADBD5;
+}
+/* top body color */
+.top_body_color{
+    width: 100vw;
+    height: 100px;
+    background-color: #009788;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+
+.max_container{
+    width: 90vw;
+    height: 90vh;
+    margin: 5vh;
+    border: 1px solid #c3c5c3;
+}
+
+.max_container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+.section_left{
+    width: 30%;
+    min-width: 130px;
+    height: 100%;
+    border: 1px solid #c3c5c3;
+    background-color: #EDEDED;
+    display: flex;
+    flex-direction: column;
+}
+.section_right{
+    flex-grow: 1;
+    border: 1px solid #c3c5c3;
+    border-left: none;
+    height: 100%;
+}
+
+.nav_part{
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px solid #c3c5c3;
+    background-color: white;
+}
+
+
+.notif_part{
+    display: flex;
+    align-items: center;
+    background-color: #9EE1FE;
+    
+    height: 55px;
+    width: 100%;
+}
+
+.search_part{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+    background-color: #EDEDED;
+}
+
+.search_style{
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    color: #D3D3D3;
+}
+
+.input_style{
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+
+.fa-bell-slash{
+    color: #D3D3D3;
+}
+.bell_circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+ 
+}
+
+.contacts_list_footer{
+overflow: scroll;
+}
+
+.contacts_list_footer .obj_hover:hover{
+    background-color: rgb(188, 191, 194);
+}
+
+
+.img_avatar_contact{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+
+
+.img_avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.section_right{
+    background-image: url(imgs/mine.jpg);
+    
+}
+
+
+
+.empty_div{
+    flex-grow: 1;
+}
+
+.pl_10{
+    padding: 5px 10px   5px 10px;
+}
+.pl_5{
+    padding-left: 5px ;
+}
+.pr_5{
+    padding-right: 5px ;
+}
+
+.color_grey_icons{
+    color: #767877;
+}
+
+
+
+
+/* .border{
+    border: solid 1px black;
+} */
+
