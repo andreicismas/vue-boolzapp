@@ -7,6 +7,8 @@
 
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
     <link rel="stylesheet" href="style.css">
@@ -102,7 +104,7 @@
                     :class="
                     message.status === 'sent'?
                     'green_message' : 'white_messege' " >
-                        <p class="message_in">{{message.date}}</p>
+                        <p class="message_in">{{messegeTime(message.date)}}</p>
                         {{message.text}}
                     </div>
                 </div>
@@ -118,7 +120,7 @@
                         
                     </div>
                     <div class="grow_div">
-                        <input class=" input_style" type="search" placeholder="">
+                        <input class=" input_style" type="search" placeholder="Scrivi nuovo messagio">
                     </div>
                     <div class="">
                         <i class="p_20 fa fa-microphone" aria-hidden="true"></i>

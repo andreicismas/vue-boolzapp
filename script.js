@@ -88,16 +88,20 @@ const app = new Vue({
             
         ],
         userSelect:{},
+        messageText: "",
     },
     methods:{
         userClick(user){
             this.userSelect = user
         },
 
-        formatTheDate(date) {
-            return moment(date, "DD/MM/YYYY HH:mm:ss").format("HH:mm");
+        messegeTime(date) {
+            return moment(date, "DD/MM/YYYY  HH:mm:ss").format("HH:mm");
         },
+
     },
+   
+    
     mounted(){
         this.userSelect = this.usersList[0]
     }

@@ -175,6 +175,18 @@ overflow: auto;
     top: 0;
 }
 
+.green_message::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px 0 10px;
+    border-color: #E0F9CB transparent transparent transparent;
+    position: absolute;
+    left: 233px;
+    top: 0;
+}
+
 .green_message{
     background-color: #E0F9CB;
     align-self: flex-end;
@@ -183,18 +195,17 @@ overflow: auto;
 .row_messages{
     display: flex;
     flex-direction: column;
-    padding: 15px;
     width: 100%;
 }
 
 
 .container_mess{
-    border-radius: 8px;;
-    padding: 10px;
-    text-align: center;
-    width: 20%;
     position: relative;
-    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    width: 30%;
+    margin: 12px;
+    border-radius: 8px;;
 }
 
 .container_mess .message_in{
