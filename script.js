@@ -84,25 +84,97 @@ const app = new Vue({
                     }
                 ],
             },
-           
-            
+
+
         ],
-        userSelect:{},
+        userSelect: {},
         messageText: "",
+        inputNewMessage: "",
+        userSearch: "",
     },
-    methods:{
-        userClick(user){
+
+    // ********************
+    computed: {
+        selectedLastMessage() {
+            if (!this.userSelect.messages) {
+                return "";
+            }
+
+            const recivMess = this.userSelect.messages.filter((mess) => mess.status === "received");
+
+            const lastMessDate = recivMess[recivMess.length - 1].date;
+            return this.messegeTime(lastMessDate)
+        },
+    },
+    // ******************
+    methods: {
+        userClick(user) {
             this.userSelect = user
         },
+
+
 
         messegeTime(date) {
             return moment(date, "DD/MM/YYYY  HH:mm:ss").format("HH:mm");
         },
 
+
+        // messagi inseriti dal utente con la risposta "ciao "
+        addInputUserMessage() {
+            if (!this.inputNewMessage) {
+                return "";
+            }
+
+            const newMessage = {
+                date: moment().format("DD/MM/YYYY HH:mm:ss"),
+                text: this.inputNewMessage,
+                status: 'sent'
+            };
+
+            const userSelect = this.userSelect;
+
+            userSelect.messages.push(newMessage);
+            this.inputNewMessage = "";
+
+
+            this.autoScroll();
+
+
+            // setTimeout( 2000)
+            setTimeout(() => {
+                const aiResponse = {
+                    date: moment().format("DD/MM/YYYY HH:mm:ss"),
+                    text: "ciao",
+                    status: 'received'
+                };
+
+                userSelect.messages.push(aiResponse)
+
+
+                this.autoScroll();
+
+
+
+            }, 2000);
+
+        },
+
+        // autoScroll non va
+        autoScroll() {
+
+            this.$nextTick(() => {
+                const elementHtml = this.$refs.toScroll;
+
+                elementHtml.scrolltop = elementHtml.scrollHeight
+
+            })
+        },
+
+
     },
-   
-    
-    mounted(){
+
+
+    mounted() {
         this.userSelect = this.usersList[0]
     }
 })

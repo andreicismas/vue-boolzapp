@@ -47,7 +47,7 @@
                 </div>
                 <div class="search_part pl_10">
                     <i class="fa fa-search search_style" aria-hidden="true"></i>
-                    <input class=" input_style" type="search" placeholder="       Cerca o inizia una nuova chat">
+                    <input class=" input_style" type="search" placeholder="    Cerca o inizia una nuova chat" v-model="userSearch" >
                 </div>
                 
             </div>
@@ -80,7 +80,7 @@
                 </div>
                 <div >
                     <h5>{{userSelect.name}}</h5>
-                    <p>Ultimo accesso  10.30</p>
+                    <p>Ultimo accesso  {{selectedLastMessage}}</p>
                 </div>
                 <div class=" border grow_div">
                         
@@ -98,9 +98,9 @@
             </div>
 
            
-            <div class="message_container ">
-                <div v-for="message in userSelect.messages" class="row_messages">
-                    <div class="container_mess"
+            <div class="message_container " >
+                <div  v-for="message in userSelect.messages" class="row_messages">
+                    <div class="container_mess"  ref="toScroll"
                     :class="
                     message.status === 'sent'?
                     'green_message' : 'white_messege' " >
@@ -120,7 +120,8 @@
                         
                     </div>
                     <div class="grow_div">
-                        <input class=" input_style" type="search" placeholder="Scrivi nuovo messagio">
+                        <input class=" input_style" type="search" placeholder="Scrivi nuovo messagio"  v-model="inputNewMessage"
+                        @keyup.enter="addInputUserMessage()">
                     </div>
                     <div class="">
                         <i class="p_20 fa fa-microphone" aria-hidden="true"></i>
