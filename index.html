@@ -50,7 +50,10 @@
                 
             </div>
             <div class="contacts_list_footer " >
-                <div class="obj_hover" v-for="(obj,index) in usersList " > 
+                <div class="obj_hover"
+
+                 v-for="(obj,index) in usersList "
+                @click="userClick(obj)" > 
                     <div>
                         <img class="img_avatar_contact" :src="obj.avatar" alt="avatar">
                     </div>
@@ -69,8 +72,13 @@
         <section class="section_right">
             
             <div class=" border pl_10 nav_part">
-                <div class=" border img_nav_container">
-                    <img class="img_avatar" src="imgs/avatar_2.jpg" alt="">
+                
+                <div class=" border img_nav_container" >
+                    <img class="img_avatar" :src="userSelect.avatar"   alt="">
+                </div>
+                <div >
+                    <h5>{{userSelect.name}}</h5>
+                    <p>Ultimo accesso  10.30</p>
                 </div>
                 <div class=" border grow_div">
                         
@@ -86,6 +94,21 @@
                     <i class="color_grey_icons pl_5 pr_5 fas fa-ellipsis-v"></i>
                 </div>
             </div>
+
+           
+            <div class="message_container ">
+                <div v-for="message in userSelect.messages" class="row_messages">
+                    <div class="container_mess"
+                    :class="
+                    message.status === 'sent'?
+                    'green_message' : 'white_messege' " >
+                        <p class="message_in">{{message.date}}</p>
+                        {{message.text}}
+                    </div>
+                </div>
+            </div>
+            
+    
             
           
             <div>

@@ -26,9 +26,6 @@ body{
     height: 90vh;
     margin: 5vh;
     border: 1px solid #c3c5c3;
-}
-
-.max_container{
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -47,7 +44,6 @@ body{
 .section_right{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex-grow: 1;
     border: 1px solid #c3c5c3;
     border-left: none;
@@ -68,7 +64,6 @@ body{
     display: flex;
     align-items: center;
     background-color: #9EE1FE;
-    
     height: 80px;
     width: 100%;
 }
@@ -92,6 +87,7 @@ body{
 .input_style{
     width: 100%;
     padding: 8px;
+    padding-left: 30px;
     border-radius: 20px;
     outline: none;
     border: none;
@@ -111,7 +107,7 @@ body{
 }
 
 .contacts_list_footer{
-overflow: scroll;
+overflow: auto;
 }
 
 .obj_hover{
@@ -122,10 +118,13 @@ overflow: scroll;
 }
 
 .contacts_list_footer .obj_hover:hover{
-    background-color: rgb(188, 191, 194);
-    
-   
+    background-color: rgb(188, 191, 194);  
 }
+.obj_hover_select{
+    background-color: rgb(117, 119, 121);  
+}
+
+
 
 .img_avatar_contact{
     width: 60px;
@@ -152,8 +151,61 @@ overflow: scroll;
     background-color: #EDEDED;
     
 }
+/* parte messagi ******************/
+.message_container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: auto;
+}
+.white_messege{
+    background-color: white;
+    align-self: flex-start;
+}
+
+.white_messege::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px 0 10px;
+    border-color: white transparent transparent transparent;
+    position: absolute;
+    left: -10px;
+    top: 0;
+}
+
+.green_message{
+    background-color: #E0F9CB;
+    align-self: flex-end;
+}
+
+.row_messages{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+}
 
 
+.container_mess{
+    border-radius: 8px;;
+    padding: 10px;
+    text-align: center;
+    width: 20%;
+    position: relative;
+    margin: 10px;
+}
+
+.container_mess .message_in{
+    font-size: 10px;
+    color: #6A746F;
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
+/* fine parte messagi ******************/
 
 .grow_div{
     flex-grow: 1;
