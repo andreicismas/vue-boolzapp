@@ -54,7 +54,7 @@
             <div class="contacts_list_footer " >
                 <div class="obj_hover"
 
-                 v-for="(obj,index) in usersList "
+                 v-for="(obj,index) in filtredUsers "
                 @click="userClick(obj)" > 
                     <div>
                         <img class="img_avatar_contact" :src="obj.avatar" alt="avatar">
