@@ -123,7 +123,7 @@ const app = new Vue({
             this.userSelect = user
         },
 
-        // autoScroll non va
+
         autoScroll() {
             this.$nextTick(() => {
                 const elementHtml = this.$refs.toScroll;
@@ -172,6 +172,23 @@ const app = new Vue({
                 this.autoScroll();
             }, 2000);
         },
+        
+        getLastMes(message) {
+            if (message.length === 0) {
+                return "no messeges"
+            }
+
+            const lastMsg = message[message.length - 1]
+            const messegeTime = this.messegeTime(lastMsg.date)
+
+            let trimmMess = lastMsg.text.slice(0, 15);
+
+            if (lastMsg.text.length > 15) {
+                trimmMess += "..."
+            }
+            return trimmMess + " " + messegeTime
+        },
+
 
     },
 
