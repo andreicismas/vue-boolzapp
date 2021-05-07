@@ -45,7 +45,7 @@
                         <p>Ricevi notifiche di nuovi messaggi</p>
 
                          <a href="#">Attiva notifiche desktop</a>
-                         
+
                     </div>
                 </div>
                 <div class="search_part pl_10">
@@ -116,11 +116,19 @@
                             'green_message' : 'white_messege' "  >
 
                         <p class="message_in">{{messegeTime(message.date)}}</p>
-
                         {{message.text}}
 
+                        <i class="fa fa-chevron-down on_show_option" ></i>
+
+                        <div class=" show_option">
+                            <ul>
+                                <li>Info message</li>
+                                <li>Delete message</li>
+                            </ul>
+                        </div>
+                        
                     </div>
-                    
+
                 </div>
             </div>
             
