@@ -112,21 +112,24 @@ const app = new Vue({
             });
         },
 
-        // autoScroll non va
-        autoScroll() {
 
-            this.$nextTick(() => {
-                const elementHtml = this.$refs.toScroll;
- 
-                elementHtml.scrolltop = elementHtml.scrollHeight
-                console.log(elementHtml);
-            });
-        },
 
-    },    // ******************
+    },   
+    
+    // ******************
     methods: {
         userClick(user) {
             this.userSelect = user
+        },
+
+        // autoScroll non va
+        autoScroll() {
+            this.$nextTick(() => {
+                const elementHtml = this.$refs.toScroll;
+
+                elementHtml.scrolltop = elementHtml.scrollHeight
+                console.log(elementHtml);
+            });
         },
 
 
@@ -154,7 +157,6 @@ const app = new Vue({
             this.inputNewMessage = "";
 
 
-            this.autoScroll();
 
 
             // setTimeout( 2000)
@@ -168,17 +170,20 @@ const app = new Vue({
                 userSelect.messages.push(aiResponse)
 
 
-                this.autoScroll();
 
 
 
             }, 2000);
+
+            this.autoScroll();
+
 
         },
 
 
 
     },
+
 
 
     mounted() {

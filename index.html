@@ -98,8 +98,8 @@
             </div>
 
            
-            <div class="message_container "  ref="toScroll">
-                <div  v-for="message in userSelect.messages" class="row_messages">
+            <div class="message_container "  >
+                <div  v-for="message in userSelect.messages" class="row_messages" ref="toScroll">
                     <div class="container_mess"  
                     :class="
                     message.status === 'sent'?
