@@ -111,76 +111,78 @@ const app = new Vue({
                 return ricerca.name.toLowerCase().includes(this.userSearch.toLowerCase())
             });
         },
-        // ******************
-        methods: {
-            userClick(user) {
-                this.userSelect = user
-            },
+
+        // autoScroll non va
+        autoScroll() {
+
+            this.$nextTick(() => {
+                const elementHtml = this.$refs.toScroll;
+ 
+                elementHtml.scrolltop = elementHtml.scrollHeight
+                console.log(elementHtml);
+            });
+        },
+
+    },    // ******************
+    methods: {
+        userClick(user) {
+            this.userSelect = user
+        },
 
 
 
-            messegeTime(date) {
-                return moment(date, "DD/MM/YYYY  HH:mm:ss").format("HH:mm");
-            },
+        messegeTime(date) {
+            return moment(date, "DD/MM/YYYY  HH:mm:ss").format("HH:mm");
+        },
 
 
-            // messagi inseriti dal utente con la risposta "ciao "
-            addInputUserMessage() {
-                if (!this.inputNewMessage) {
-                    return "";
-                }
+        // messagi inseriti dal utente con la risposta "ciao "
+        addInputUserMessage() {
+            if (!this.inputNewMessage) {
+                return "";
+            }
 
-                const newMessage = {
+            const newMessage = {
+                date: moment().format("DD/MM/YYYY HH:mm:ss"),
+                text: this.inputNewMessage,
+                status: 'sent'
+            };
+
+            const userSelect = this.userSelect;
+
+            userSelect.messages.push(newMessage);
+            this.inputNewMessage = "";
+
+
+            this.autoScroll();
+
+
+            // setTimeout( 2000)
+            setTimeout(() => {
+                const aiResponse = {
                     date: moment().format("DD/MM/YYYY HH:mm:ss"),
-                    text: this.inputNewMessage,
-                    status: 'sent'
+                    text: "ciao",
+                    status: 'received'
                 };
 
-                const userSelect = this.userSelect;
-
-                userSelect.messages.push(newMessage);
-                this.inputNewMessage = "";
+                userSelect.messages.push(aiResponse)
 
 
                 this.autoScroll();
 
 
-                // setTimeout( 2000)
-                setTimeout(() => {
-                    const aiResponse = {
-                        date: moment().format("DD/MM/YYYY HH:mm:ss"),
-                        text: "ciao",
-                        status: 'received'
-                    };
 
-                    userSelect.messages.push(aiResponse)
-
-
-                    this.autoScroll();
-
-
-
-                }, 2000);
-
-            },
-
-            // autoScroll non va
-            autoScroll() {
-
-                this.$nextTick(() => {
-                    const elementHtml = this.$refs.toScroll;
-
-                    elementHtml.scrolltop = elementHtml.scrollHeight
-
-                })
-            },
-
+            }, 2000);
 
         },
 
 
-        mounted() {
-            this.userSelect = this.usersList[0]
-        },
+
     },
+
+
+    mounted() {
+        this.userSelect = this.usersList[0]
+    },
+
 })
