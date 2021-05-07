@@ -98,12 +98,12 @@
             </div>
 
            
-            <div class="message_container "  >
-                <div  v-for="message in userSelect.messages" class="row_messages" ref="toScroll">
+            <div class="message_container "   ref="toScroll">
+                <div  v-for="message in userSelect.messages" class="row_messages" >
                     <div class="container_mess"  
                     :class="
                     message.status === 'sent'?
-                    'green_message' : 'white_messege' " >
+                    'green_message' : 'white_messege' "  >
                         <p class="message_in">{{messegeTime(message.date)}}</p>
                         {{message.text}}
                     </div>

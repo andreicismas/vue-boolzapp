@@ -106,6 +106,7 @@ const app = new Vue({
             return this.messegeTime(lastMessDate)
         },
 
+
         filtredUsers() {
             return this.usersList.filter((ricerca) => {
                 return ricerca.name.toLowerCase().includes(this.userSearch.toLowerCase())
@@ -114,8 +115,8 @@ const app = new Vue({
 
 
 
-    },   
-    
+    },
+
     // ******************
     methods: {
         userClick(user) {
@@ -127,11 +128,10 @@ const app = new Vue({
             this.$nextTick(() => {
                 const elementHtml = this.$refs.toScroll;
 
-                elementHtml.scrolltop = elementHtml.scrollHeight
+                elementHtml.scrollTop = elementHtml.scrollHeight
                 console.log(elementHtml);
             });
         },
-
 
 
         messegeTime(date) {
@@ -156,6 +156,8 @@ const app = new Vue({
             userSelect.messages.push(newMessage);
             this.inputNewMessage = "";
 
+            this.autoScroll();
+
 
 
 
@@ -166,21 +168,10 @@ const app = new Vue({
                     text: "ciao",
                     status: 'received'
                 };
-
                 userSelect.messages.push(aiResponse)
-
-
-
-
-
+                this.autoScroll();
             }, 2000);
-
-            this.autoScroll();
-
-
         },
-
-
 
     },
 
