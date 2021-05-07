@@ -95,7 +95,9 @@ const app = new Vue({
 
     // ********************
     computed: {
-        selectedLastMessage() {
+
+// date last message*************
+        selectedLastMessageDate() {
             if (!this.userSelect.messages) {
                 return "";
             };
@@ -117,13 +119,12 @@ const app = new Vue({
 
     },
 
-    // ******************
     methods: {
         userClick(user) {
             this.userSelect = user
         },
 
-
+// Overflow auto sroll**************
         autoScroll() {
             this.$nextTick(() => {
                 const elementHtml = this.$refs.toScroll;
@@ -133,13 +134,12 @@ const app = new Vue({
             });
         },
 
-
+// format date function****************
         messegeTime(date) {
             return moment(date, "DD/MM/YYYY  HH:mm:ss").format("HH:mm");
         },
 
-
-        // messagi inseriti dal utente con la risposta "ciao "
+// messagi inseriti dal utente con la risposta "ciao "
         addInputUserMessage() {
             if (!this.inputNewMessage) {
                 return "";
@@ -161,7 +161,7 @@ const app = new Vue({
 
 
 
-            // setTimeout( 2000)
+ // setTimeout( 2000)**************
             setTimeout(() => {
                 const aiResponse = {
                     date: moment().format("DD/MM/YYYY HH:mm:ss"),
@@ -172,12 +172,13 @@ const app = new Vue({
                 this.autoScroll();
             }, 2000);
         },
+
         
+// user last message *******************
         getLastMes(message) {
             if (message.length === 0) {
                 return "no messeges"
             }
-
             const lastMsg = message[message.length - 1]
             const messegeTime = this.messegeTime(lastMsg.date)
 

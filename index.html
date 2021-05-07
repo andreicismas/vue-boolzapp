@@ -41,8 +41,11 @@
                         <i class=" fa fa-bell-slash" aria-hidden="true"></i>
                     </div>
                     <div class="pl_5">
+
                         <p>Ricevi notifiche di nuovi messaggi</p>
+
                          <a href="#">Attiva notifiche desktop</a>
+                         
                     </div>
                 </div>
                 <div class="search_part pl_10">
@@ -61,7 +64,9 @@
                     </div>
                     <div>
                         <h5>{{obj.name}}</h5>
+
                         <p>{{getLastMes(obj.messages)}}</p>
+
                     </div>
                 </div>
             </div>
@@ -79,8 +84,12 @@
                     <img class="img_avatar" :src="userSelect.avatar"   alt="">
                 </div>
                 <div >
+
                     <h5>{{userSelect.name}}</h5>
-                    <p>Ultimo accesso  {{selectedLastMessage}}</p>
+
+                    <p>Ultimo accesso  {{selectedLastMessageDate}}</p>
+
+
                 </div>
                 <div class=" border grow_div">
                         
@@ -99,14 +108,19 @@
 
            
             <div class="message_container "   ref="toScroll">
-                <div  v-for="message in userSelect.messages" class="row_messages" >
-                    <div class="container_mess"  
-                    :class="
-                    message.status === 'sent'?
-                    'green_message' : 'white_messege' "  >
+                <div  v-for="message in userSelect.messages" 
+                     class="row_messages" >
+                    <div 
+                    class="container_mess"  
+                    :class=" message.status === 'sent'?
+                            'green_message' : 'white_messege' "  >
+
                         <p class="message_in">{{messegeTime(message.date)}}</p>
+
                         {{message.text}}
+
                     </div>
+                    
                 </div>
             </div>
             
@@ -120,10 +134,15 @@
                         
                     </div>
                     <div class="grow_div">
-                        <input class=" input_style" type="search" placeholder="Scrivi nuovo messagio"  v-model="inputNewMessage"
+                        <input class=" input_style"
+                         type="search" 
+                         placeholder="Scrivi nuovo messagio" 
+                        v-model="inputNewMessage"
                         @keyup.enter="addInputUserMessage()">
                     </div>
+
                     <div class="">
+
                         <i class="p_20 fa fa-microphone" aria-hidden="true"></i>
                     </div>
                     
