@@ -231,11 +231,13 @@ overflow: auto;
 
 /* fine parte messagi ******************/
 
-/* show message delete */
+/* show window message delete */
 .on_show_option{
     position:absolute;
     right: 8px;
-    top: 0px;
+    top: 2px;
+    opacity: 0.3;
+    font-size: 12px;
 }
 .show_option{
     position: absolute;
@@ -244,6 +246,7 @@ overflow: auto;
     background-color: white;
     border-radius: 5px;
     box-shadow:0 5px 10px rgba(111, 122, 211, 0.3);
+    
 }
 
 .show_option ul{
