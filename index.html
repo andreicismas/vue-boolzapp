@@ -108,22 +108,25 @@
 
            
             <div class="message_container "   ref="toScroll">
-                <div  v-for="message in userSelect.messages" 
+                <div  v-for="(message,index) in userSelect.messages" 
                      class="row_messages" >
                     <div 
-                    class="container_mess"  
-                    :class=" message.status === 'sent'?
-                            'green_message' : 'white_messege' "  >
+                            class="container_mess"  
+                            :class=" message.status === 'sent'?
+                            'green_message' : 'white_messege' "
+                             @click="messageOnClick(message, $event)"
+                             tabindex="-1"
+                             @blur ="mouseOutOff(message)" >
 
                         <p class="message_in">{{messegeTime(message.date)}}</p>
                         {{message.text}}
 
                         <i class="fa fa-chevron-down on_show_option" ></i>
 
-                        <div class=" show_option" v-if="message.showOption">
-                            <ul>
+                        <div class=" show_option" v-if="message.showOption" @click="onShowOption(message)">
+                            <ul >
                                 <li>Info message</li>
-                                <li>Delete message</li>
+                                <li @click.stop="onShowOptionDelete(index)">Delete message</li>
                             </ul>
                         </div>
                         

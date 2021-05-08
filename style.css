@@ -232,11 +232,17 @@ overflow: auto;
 /* fine parte messagi ******************/
 
 /* show window message delete */
+.container_mess:hover .on_show_option{
+opacity: 0.3;
+transition: 0.4s;
+}
+
+
 .on_show_option{
     position:absolute;
     right: 8px;
     top: 2px;
-    opacity: 0.3;
+    opacity: 0;
     font-size: 12px;
 }
 .show_option{

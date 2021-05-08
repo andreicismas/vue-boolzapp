@@ -96,7 +96,7 @@ const app = new Vue({
     // ********************
     computed: {
 
-// date last message*************
+        // date last message*************
         selectedLastMessageDate() {
             if (!this.userSelect.messages) {
                 return "";
@@ -124,7 +124,7 @@ const app = new Vue({
             this.userSelect = user
         },
 
-// Overflow auto sroll**************
+        // Overflow auto sroll**************
         autoScroll() {
             this.$nextTick(() => {
                 const elementHtml = this.$refs.toScroll;
@@ -134,12 +134,12 @@ const app = new Vue({
             });
         },
 
-// format date function****************
+        // format date function****************
         messegeTime(date) {
             return moment(date, "DD/MM/YYYY  HH:mm:ss").format("HH:mm");
         },
 
-// messagi inseriti dal utente con la risposta "ciao "
+        // messagi inseriti dal utente con la risposta "ciao "
         addInputUserMessage() {
             if (!this.inputNewMessage) {
                 return "";
@@ -161,7 +161,7 @@ const app = new Vue({
 
 
 
- // setTimeout( 2000)**************
+            // setTimeout( 2000)**************
             setTimeout(() => {
                 const aiResponse = {
                     date: moment().format("DD/MM/YYYY HH:mm:ss"),
@@ -173,8 +173,8 @@ const app = new Vue({
             }, 2000);
         },
 
-        
-// user last message *******************
+
+        // user last message *******************
         getLastMes(message) {
             if (message.length === 0) {
                 return "no messeges"
@@ -189,6 +189,24 @@ const app = new Vue({
             }
             return trimmMess + " " + messegeTime
         },
+
+        messageOnClick(message, event) {
+            this.$set(message, "showOption", true);
+            event.curentTarget.focus()
+
+        },
+
+        mouseOutOff(message) {
+            this.$set(message, "showOption", false);
+
+        },
+        onShowOption(message) {
+            message.showOption = false
+        },
+        onShowOptionDelete(msgDell){
+            this.userSelect.messages.splice(msgDell,1)
+        }
+
 
 
     },
